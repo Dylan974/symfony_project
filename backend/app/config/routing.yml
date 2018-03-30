@@ -1,0 +1,13 @@
+github_projects:
+    resource: "@GithubProjectsBundle/Controller/ProjectController.php"
+    type:     rest
+    prefix:   /api
+
+github_tags:
+    resource: "@GithubProjectsBundle/Controller/TagController.php"
+    type:     rest
+    prefix:   /api
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

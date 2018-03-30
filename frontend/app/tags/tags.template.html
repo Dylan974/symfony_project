@@ -1,0 +1,22 @@
+<h1>Tags</h1>
+
+<div class="Tags" ng-repeat="tag in $ctrl.tags.tags">
+    <h2>name : {{tag.name}}</h2>
+    <input type="button" ng-click="$ctrl.showProjects(tag)" value="Projects" />
+</div>
+
+<br/>
+
+<div>
+    <form name="form" class="css-form" novalidate>
+      <label>Name:
+        <input type="text" ng-model="tag.name" name="uName" required="" />
+      </label>
+      <br />
+      <div ng-show="form.$submitted || form.uName.$touched">
+        <div ng-show="form.uName.$error.required">Tell the tag name.</div>
+      </div>
+  
+      <input type="submit" ng-click="$ctrl.create(tag)" value="Add Tag" />
+    </form>
+  </div>

@@ -1,0 +1,31 @@
+<h1>Projects</h1>
+
+<div class="Project" ng-repeat="project in $ctrl.projects.projects">
+    <h2>Projects {{$index + 1}}</h2>
+    <h3><a href={{project.src}} target="_blank">{{project.name}}</a></h3>
+</div>
+
+<br/>
+
+<div>
+    <form name="form" class="css-form" novalidate>
+      <label>Name:
+        <input type="text" ng-model="project.name" name="uName" required="" />
+      </label>
+      <br />
+      <div ng-show="form.$submitted || form.uName.$touched">
+        <div ng-show="form.uName.$error.required">Tell the project name.</div>
+      </div>
+  
+      <label>Url:
+        <input type="text" ng-model="project.url" name="uUrl" required="" />
+      </label>
+      <br />
+      <div ng-show="form.$submitted || form.uUrl.$touched">
+        <span ng-show="form.uUrl.$error.required">Tell the project url.</span>
+      </div>
+  
+      <input type="button" ng-click="reset(form)" value="Reset" />
+      <input type="submit" ng-click="$ctrl.create(project)" value="Add Project" />
+    </form>
+  </div>
